@@ -1,8 +1,9 @@
-# [Backstage](https://backstage.io)
+# [VeeCode](https://platform.vee.codes/)
 
-This is your newly scaffolded Backstage App, Good Luck!
+Esse repo servira de base para os dias 2 e 3 do workshop de plugins dinamicos.
+Ele contem uma instalacao basica do backstage para trabalharmos na criacao de custom actions do scaffolder, novos kinds no catalogo e plugins de frontend e backend.
 
-To start the app, run:
+Para rodar:
 
 ```sh
 yarn install
