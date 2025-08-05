@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: Veecode Workshop Plugins Dinamicos
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: Veecode workshop plugins dinamicos
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -43,7 +43,7 @@ integrations:
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
 
-proxy:
+#proxy:
   ### Example for how to add a proxy endpoint for the frontend.
   ### A typical reason to do this is to handle HTTPS and CORS for internal services.
   # endpoints:
@@ -68,7 +68,7 @@ auth:
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
 
-scaffolder:
+#scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
@@ -104,10 +104,10 @@ catalog:
     #   rules:
     #     - allow: [User, Group]
 
-kubernetes:
+#kubernetes:
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
 permission:
   # setting this to `false` will disable permissions
-  enabled: true
+  enabled: false
