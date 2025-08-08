@@ -42,6 +42,40 @@ global:
                     inportName: VeecodeGlobalHeader
                     config:
                       position: above-sidebar
+      - package: '@veecode-platform/plugin-scaffolder-backend-module-workshop-dynamic@0.1.0'
+        disabled: false
+        integrity: sha512-lezWek2ou76V5S6mH+nWUSKLwhHIw2CX658NT/fsX4/z1OMd6dyvMFj4aKY2rovwq7utQz+cScv7Z7kbqXA8OQ==
+
+      - package: '@veecode-platform/plugin-workshop-backend-dynamic@0.1.0'
+        disabled: false
+        integrity: sha512-bVOSb6BTcfwvQTdiE34fNM9r0ieNH6N+7Nty2YyavhccmvTFCugabisSUCAbjLv7boe6lwaHJmaLOzn+vA8qWg==
+        
+      - package: '@veecode-platform/plugin-workshop-frontend-dynamic@0.1.3'
+        disabled: false
+        integrity: sha512-o8P5GN97VoQhdRiccJiwyThP6Gs5clQ0+NTJ2EK8sxIOsH7pKjyGxr+h83Q3DemfRDukWpHlPuwCYJmc4J2x6A==
+        pluginConfig:
+          dynamicPlugins:
+            frontend:
+              veecode-platform.plugin-workshop-frontend-dynamic:
+                dynamicRoutes:
+                  - path: /workshop-frontend
+                    importName: WorkshopFrontendPage
+                    menuItem:
+                      icon: cluster
+                      text: Workshop
+                mountPoints:
+                  - mountPoint: entity.page.workshop/cards
+                    importName: WorkshopEntityPage
+                    config:
+                      layout:
+                        gridColumn: '1 / -1'
+                      if:
+                        anyOf:
+                          - isKind: Component
+                entityTabs:
+                  - path: /workshop
+                    title: Workshop
+                    mountPoint: entity.page.workshop
 
 upstream:
   enabled: true
