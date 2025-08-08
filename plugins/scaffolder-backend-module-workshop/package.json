@@ -1,8 +1,7 @@
 {
-  "name": "@internal/plugin-scaffolder-backend-module-workshop",
+  "name": "@veecode-platform/plugin-scaffolder-backend-module-workshop",
   "version": "0.1.0",
   "license": "Apache-2.0",
-  "private": true,
   "description": "The workshop module for @backstage/plugin-scaffolder-backend",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -22,7 +21,8 @@
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "build-dynamic": "npx @janus-idp/cli@latest package export-dynamic-plugin"
   },
   "dependencies": {
     "@backstage/backend-plugin-api": "^1.4.1",

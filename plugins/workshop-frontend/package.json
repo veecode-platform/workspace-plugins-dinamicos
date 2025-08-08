@@ -1,8 +1,7 @@
 {
-  "name": "@internal/plugin-workshop-frontend",
-  "version": "0.1.0",
+  "name": "@veecode-platform/plugin-workshop-frontend",
+  "version": "0.1.3",
   "license": "Apache-2.0",
-  "private": true,
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {
@@ -22,7 +21,8 @@
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "build-dynamic": "npx @janus-idp/cli@latest package export-dynamic-plugin"
   },
   "dependencies": {
     "@backstage/core-components": "^0.17.4",
@@ -48,6 +48,13 @@
     "react": "^16.13.1 || ^17.0.0 || ^18.0.0"
   },
   "files": [
-    "dist"
-  ]
+    "dist",
+    "dist-scalprum"
+  ],
+  "scalprum": {
+    "name": "veecode-platform.plugin-workshop-frontend-dynamic",
+    "exposedModules": {
+      "PluginRoot": "./src/index.ts"
+    }
+  }
 }

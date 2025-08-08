@@ -1,0 +1,69 @@
+#
+# setup minimo infra local (vkdr):
+#
+# vkdr infra start --http 80 --https 443
+# vkdr nginx install --default-ic
+#
+# instalação local:
+
+# helm repo add veecode-platform-next https://veecode-platform.github.io/next-charts
+# helm upgrade --install veecode-devportal veecode-platform-next/veecode-devportal --version 1.0.12 -f vkdr-minimal-values.yaml
+
+global:
+  host: devportal.localhost
+  protocol: http
+
+upstream:
+  enabled: true
+  fullnameOverride: veecode-devportal
+  ingress:
+    enabled: true
+  backstage:
+    appConfig:
+      auth:
+        environment: "development"
+        session:
+          secret: 12327de5-fa55-4c17-9423-4f06d09183b3
+        providers:
+          guest:
+            dangerouslyAllowOutsideDevelopment: true
+      app:
+        analytics:
+          ga4:
+            measurementId: 12327de5-fa55-4c17-9423-4f06d09183b3
+            identity: optional
+            testMode: false
+            debug: true
+      backend:
+        auth:
+          externalAccess:
+            - type: static
+              options:
+                token: 12327de5-fa55-4c17-9423-4f06d09183b3
+                subject: secret
+      platform:
+        guest:
+          enabled: true
+        enabledPlugins:
+          github: false
+      catalog:
+        locations:
+          - type: url
+            target: https://github.com/veecode-platform/workspace-plugins-dinamicos/blob/master/examples/entities.yaml
+            rules:
+              - allow: [System, Component, API]
+
+          - type: url
+            target: https://github.com/veecode-platform/workspace-plugins-dinamicos/blob/master/examples/template/template.yaml
+            rules:
+              - allow: [Template]
+
+          - type: url
+            target: https://github.com/veecode-platform/workspace-plugins-dinamicos/blob/master/examples/org.yaml
+            rules:
+              - allow: [User, Group]
+
+      grafana:
+        domain: grafana.localhost
+        unifiedAlerting: true
+

@@ -58,7 +58,7 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 
-import { WorkshopEntityPage } from '@internal/plugin-workshop-frontend';
+import { WorkshopEntityPage } from '@veecode-platform/plugin-workshop-frontend';
 
 const techdocsContent = (
   <EntityTechdocsContent>
