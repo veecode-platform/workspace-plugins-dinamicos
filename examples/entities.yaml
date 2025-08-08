@@ -12,6 +12,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: example-website
+  links: 
+    - url: 'https://github.com'
+      title: 'title'
+
 spec:
   type: website
   lifecycle: experimental

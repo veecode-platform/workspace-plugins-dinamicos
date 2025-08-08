@@ -58,6 +58,8 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 
+import { WorkshopEntityPage } from '@internal/plugin-workshop-frontend';
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -221,6 +223,11 @@ const websiteEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+
+    <EntityLayout.Route path="/workshop" title="Workshop">
+      <WorkshopEntityPage />
+    </EntityLayout.Route>
+
   </EntityLayout>
 );
 
