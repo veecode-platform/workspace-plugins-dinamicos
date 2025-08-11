@@ -15,6 +15,7 @@ metadata:
   links: 
     - url: 'https://github.com'
       title: 'github'
+      icon: externalLink
 
 spec:
   type: website
