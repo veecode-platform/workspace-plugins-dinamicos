@@ -14,7 +14,7 @@ metadata:
   name: example-website
   links: 
     - url: 'https://github.com'
-      title: 'title'
+      title: 'github'
 
 spec:
   type: website
